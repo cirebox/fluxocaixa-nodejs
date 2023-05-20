@@ -6,6 +6,7 @@ export function createDocument(app: INestApplication): OpenAPIObject {
   const builder = new DocumentBuilder()
     .setTitle(SWAGGER_CONFIG.title)
     .setDescription(SWAGGER_CONFIG.description)
+    .addServer('https://cirebox.com.br/cashflow')
     .addServer('http://localhost:' + (process.env.PORT || 3000))
     .addBearerAuth(
       {
